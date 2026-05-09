@@ -34,6 +34,12 @@ class ResultPage(QWidget):
         self._setup_ui()
 
     def _setup_ui(self):
+        self.setStyleSheet(f"""
+            QWidget {{
+                background-color: {SURFACE};
+            }}
+        """)
+
         layout = QVBoxLayout()
         layout.setContentsMargins(40, 40, 40, 40)
         layout.setSpacing(18)
@@ -45,6 +51,8 @@ class ResultPage(QWidget):
                 color: {TEXT_DARK};
                 font-size: 26px;
                 font-weight: bold;
+                background-color: transparent;
+                border: none;
             }}
         """)
 
@@ -57,6 +65,8 @@ class ResultPage(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 15px;
+                background-color: transparent;
+                border: none;
             }}
         """)
 
@@ -72,7 +82,6 @@ class ResultPage(QWidget):
 
         header_actions = QHBoxLayout()
         header_actions.setSpacing(12)
-
         header_actions.addStretch()
         header_actions.addWidget(self.export_json_button)
         header_actions.addWidget(self.export_pdf_button)
@@ -110,6 +119,7 @@ class ResultPage(QWidget):
         icon.setStyleSheet("""
             QLabel {
                 font-size: 42px;
+                background-color: transparent;
                 border: none;
             }
         """)
@@ -121,6 +131,7 @@ class ResultPage(QWidget):
                 color: {TEXT_DARK};
                 font-size: 20px;
                 font-weight: bold;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -138,6 +149,7 @@ class ResultPage(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 14px;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -149,6 +161,7 @@ class ResultPage(QWidget):
                 color: {PRIMARY_COLOR};
                 font-size: 14px;
                 font-weight: 600;
+                background-color: transparent;
                 border: none;
             }}
         """)

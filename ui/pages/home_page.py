@@ -1,15 +1,15 @@
 from __future__ import annotations
 
-from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QFrame,
     QGridLayout,
     QLabel,
     QVBoxLayout,
-    QWidget
+    QWidget,
 )
 
 from ui.styles.theme import BORDER, PRIMARY_COLOR, SURFACE, TEXT_DARK, TEXT_MUTED
+
 
 class HomePage(QWidget):
     def __init__(self):
@@ -17,7 +17,11 @@ class HomePage(QWidget):
         self._setup_ui()
 
     def _setup_ui(self):
-        self.setStyleSheet(f"background-color: {SURFACE};")
+        self.setStyleSheet(f"""
+            QWidget {{
+                background-color: {SURFACE};
+            }}
+        """)
 
         layout = QVBoxLayout()
         layout.setContentsMargins(40, 40, 40, 40)
@@ -30,6 +34,8 @@ class HomePage(QWidget):
                 color: {TEXT_DARK};
                 font-size: 26px;
                 font-weight: bold;
+                background-color: transparent;
+                border: none;
             }}
         """)
 
@@ -43,7 +49,9 @@ class HomePage(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 15px;
-            }}  
+                background-color: transparent;
+                border: none;
+            }}
         """)
 
         cards_layout = QGridLayout()
@@ -61,7 +69,7 @@ class HomePage(QWidget):
         cards_layout.addWidget(
             self._create_info_card(
                 "Processing",
-                "Validation, extraction of x1-x20 statistical features, features transformation, and classification."
+                "Validation, extraction of x1–x20 statistical features, feature transformation, and classification."
             ),
             0,
             1
@@ -70,7 +78,7 @@ class HomePage(QWidget):
         cards_layout.addWidget(
             self._create_info_card(
                 "Output",
-                "Prediction probability, model explanation feature heatmap, and exportable reports."
+                "Prediction probability, model explanation, feature heatmap, and exportable reports."
             ),
             0,
             2
@@ -82,6 +90,8 @@ class HomePage(QWidget):
                 color: {TEXT_DARK};
                 font-size: 20px;
                 font-weight: bold;
+                background-color: transparent;
+                border: none;
             }}
         """)
 
@@ -90,10 +100,11 @@ class HomePage(QWidget):
             "1. Upload a patient CSV file.\n"
             "2. Validate the input data structure.\n"
             "3. Extract base statistical features x1–x20.\n"
-            "4. Generate transformed prediction.\n"
-            "5. Run logistic regression prediction\n"
-            "6. Expain model decision and visualize feature contributions."
+            "4. Generate transformed predictors.\n"
+            "5. Run logistic regression prediction.\n"
+            "6. Explain the model decision and visualize feature contributions."
         )
+        workflow.setWordWrap(True)
         workflow.setStyleSheet(f"""
             QLabel {{
                 color: {TEXT_DARK};
@@ -102,7 +113,7 @@ class HomePage(QWidget):
                 background-color: #F6F8F4;
                 border: 1px solid {BORDER};
                 border-radius: 12px;
-            }}      
+            }}
         """)
 
         note = QLabel(
@@ -110,12 +121,14 @@ class HomePage(QWidget):
             "to replace professional clinical diagnosis."
         )
         note.setWordWrap(True)
-        note.setStyleSheet(f"""
-            QLabel {{
+        note.setStyleSheet("""
+            QLabel {
                 color: #6F7D73;
                 font-size: 13px;
                 padding: 10px;
-            }}
+                background-color: transparent;
+                border: none;
+            }
         """)
 
         layout.addWidget(title)
@@ -132,7 +145,7 @@ class HomePage(QWidget):
             QFrame {{
                 background-color: #F6F8F4;
                 border: 1px solid {BORDER};
-                border-radius: 14px;  
+                border-radius: 14px;
             }}
         """)
 
@@ -147,6 +160,7 @@ class HomePage(QWidget):
                 color: {PRIMARY_COLOR};
                 font-size: 17px;
                 font-weight: bold;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -157,6 +171,7 @@ class HomePage(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 14px;
+                background-color: transparent;
                 border: none;
             }}
         """)

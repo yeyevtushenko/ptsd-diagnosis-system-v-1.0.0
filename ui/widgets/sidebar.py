@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import qtawesome as qta
 
-from PySide6.QtCore import Signal, QSize
+from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtWidgets import (
     QFrame,
     QLabel,
@@ -12,7 +12,14 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ui.styles.theme import PRIMARY_COLOR, PRIMARY_HOVER, TEXT_DARK, SURFACE
+from ui.styles.theme import (
+    BORDER,
+    PRIMARY_COLOR,
+    PRIMARY_HOVER,
+    SURFACE,
+    TEXT_DARK,
+    TEXT_MUTED,
+)
 
 
 class Sidebar(QWidget):
@@ -36,40 +43,59 @@ class Sidebar(QWidget):
         layout.setContentsMargins(16, 20, 16, 20)
         self.setLayout(layout)
 
-        title_container = QWidget()
+        title_container = QFrame()
+        title_container.setStyleSheet("""
+            QFrame {
+                background-color: transparent;
+                border: none;
+            }
+        """)
 
         title_layout = QHBoxLayout()
         title_layout.setContentsMargins(0, 0, 0, 0)
         title_layout.setSpacing(12)
-
         title_container.setLayout(title_layout)
 
         brain_icon = QLabel()
         brain_icon.setPixmap(
-            qta.icon(
-                "fa5s.brain",
-                color=TEXT_DARK
-            ).pixmap(36, 36)
+            qta.icon("fa5s.brain", color=TEXT_DARK).pixmap(38, 38)
         )
+        brain_icon.setAlignment(Qt.AlignTop)
+        brain_icon.setStyleSheet("""
+            QLabel {
+                background-color: transparent;
+                border: none;
+            }
+        """)
 
         title = QLabel("PTSD\nDiagnosis System")
         title.setStyleSheet(f"""
             QLabel {{
                 color: {TEXT_DARK};
-                font-size: 20px;
+                font-size: 19px;
                 font-weight: bold;
+                line-height: 110%;
+                background-color: transparent;
                 border: none;
             }}
         """)
 
         title_layout.addWidget(brain_icon)
         title_layout.addWidget(title)
+        title_layout.addStretch()
 
         layout.addWidget(title_container)
 
         separator = QFrame()
         separator.setFrameShape(QFrame.HLine)
-        separator.setStyleSheet("color: #D6DED2;")
+        separator.setStyleSheet(f"""
+            QFrame {{
+                color: {BORDER};
+                background-color: {BORDER};
+                border: none;
+                max-height: 1px;
+            }}
+        """)
         layout.addWidget(separator)
 
         self.home_button = self._create_button(
@@ -106,7 +132,6 @@ class Sidebar(QWidget):
             "FAQ && Model",
             "model_info",
             qta.icon("fa5s.info-circle", color=TEXT_DARK)
-
         )
 
         layout.addWidget(self.home_button)
@@ -119,12 +144,15 @@ class Sidebar(QWidget):
         layout.addStretch()
 
         version_label = QLabel("v1.0.0 BETA")
+        version_label.setAlignment(Qt.AlignLeft)
         version_label.setStyleSheet(f"""
             QLabel {{
-                color: #7A8A80;
+                color: {TEXT_MUTED};
                 font-size: 12px;
-                border: none;
-                padding: 6px;
+                background-color: #F6F8F4;
+                border: 1px solid {BORDER};
+                border-radius: 8px;
+                padding: 7px 10px;
             }}
         """)
 

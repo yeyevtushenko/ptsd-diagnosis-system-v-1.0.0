@@ -42,6 +42,7 @@ class ResultCard(QWidget):
                 color: {TEXT_DARK};
                 font-size: 22px;
                 font-weight: bold;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -69,6 +70,7 @@ class ResultCard(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 14px;
+                background-color: transparent;
                 border: none;
                 padding: 8px;
             }}
@@ -80,6 +82,7 @@ class ResultCard(QWidget):
             QLabel {{
                 color: {TEXT_DARK};
                 font-size: 14px;
+                background-color: transparent;
                 border: none;
                 padding: 8px;
             }}
@@ -125,6 +128,7 @@ class ResultCard(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 13px;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -135,6 +139,7 @@ class ResultCard(QWidget):
                 color: {TEXT_DARK};
                 font-size: 20px;
                 font-weight: bold;
+                background-color: transparent;
                 border: none;
             }}
         """)

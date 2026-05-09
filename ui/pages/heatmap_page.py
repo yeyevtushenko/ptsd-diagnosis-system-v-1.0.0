@@ -29,6 +29,12 @@ class HeatmapPage(QWidget):
         self._setup_ui()
 
     def _setup_ui(self):
+        self.setStyleSheet(f"""
+            QWidget {{
+                background-color: {SURFACE};
+            }}
+        """)
+
         layout = QVBoxLayout()
         layout.setContentsMargins(40, 40, 40, 40)
         layout.setSpacing(16)
@@ -40,6 +46,8 @@ class HeatmapPage(QWidget):
                 color: {TEXT_DARK};
                 font-size: 26px;
                 font-weight: bold;
+                background-color: transparent;
+                border: none;
             }}
         """)
 
@@ -53,12 +61,15 @@ class HeatmapPage(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 15px;
+                background-color: transparent;
+                border: none;
             }}
         """)
 
         self.empty_state = self._create_empty_state()
 
         self.heatmap_card = QFrame()
+        self.heatmap_card.setMinimumHeight(700)
         self.heatmap_card.setStyleSheet(f"""
             QFrame {{
                 background-color: {SURFACE};
@@ -82,15 +93,26 @@ class HeatmapPage(QWidget):
                 color: {TEXT_MUTED};
                 font-size: 13px;
                 padding: 8px;
+                background-color: transparent;
                 border: none;
             }}
         """)
 
         self.scroll = QScrollArea()
-        self.scroll.setWidgetResizable(True)
-        self.scroll.setStyleSheet("border: none;")
+        self.scroll.setWidgetResizable(False)
+        self.scroll.setMinimumHeight(620)
+        self.scroll.setStyleSheet("""
+            QScrollArea {
+                border: none;
+                background-color: transparent;
+            }
+            QScrollArea > QWidget > QWidget {
+                background-color: transparent;
+            }
+        """)
 
         self.container = QWidget()
+        self.container.setMinimumSize(1900, 1100)
         self.container.setStyleSheet("""
             QWidget {
                 background-color: transparent;
@@ -99,8 +121,8 @@ class HeatmapPage(QWidget):
         """)
 
         self.grid = QGridLayout()
-        self.grid.setSpacing(2)
-        self.grid.setContentsMargins(8, 8, 8, 8)
+        self.grid.setSpacing(4)
+        self.grid.setContentsMargins(16, 16, 16, 16)
         self.container.setLayout(self.grid)
 
         self.scroll.setWidget(self.container)
@@ -136,6 +158,7 @@ class HeatmapPage(QWidget):
                 color: {PRIMARY_COLOR};
                 font-size: 46px;
                 font-weight: bold;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -147,6 +170,7 @@ class HeatmapPage(QWidget):
                 color: {TEXT_DARK};
                 font-size: 20px;
                 font-weight: bold;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -162,6 +186,7 @@ class HeatmapPage(QWidget):
             QLabel {{
                 color: {TEXT_MUTED};
                 font-size: 14px;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -173,6 +198,7 @@ class HeatmapPage(QWidget):
                 color: {PRIMARY_COLOR};
                 font-size: 14px;
                 font-weight: 600;
+                background-color: transparent;
                 border: none;
             }}
         """)
@@ -255,10 +281,9 @@ class HeatmapPage(QWidget):
             QLabel {{
                 background-color: {background};
                 color: #1F1F1F;
-                border: 1px solid #E1E6DF;
-                padding: 8px;
-                min-width: 64px;
-                min-height: 34px;
+                border: 1px solid #DDE6DC;
+                border-radius: 8px;
+                padding: 4px;
                 font-size: 13px;
                 font-weight: {weight};
             }}
@@ -267,6 +292,7 @@ class HeatmapPage(QWidget):
     def _make_cell(self, text: str, background: str, bold: bool = False) -> QLabel:
         label = QLabel(text)
         label.setAlignment(Qt.AlignCenter)
+        label.setFixedSize(82, 46)
         label.setStyleSheet(self._cell_style(background, bold))
         return label
 
