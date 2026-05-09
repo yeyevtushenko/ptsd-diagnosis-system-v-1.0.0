@@ -1,0 +1,17 @@
+{
+  "model_name": "PTSD classifier",
+  "model_type": "Logistic Regression",
+  "target": "PTSD diagnosis",
+  "description": "Model for PTSD diagnosis based on statistical parameters of cross-correlation functions of BOLD signals.",
+  "base_feature_count": 14,
+  "source_feature_pool": 20,
+  "training_parameters": {
+    "test_size": 0.15,
+    "valid_size": 0.25
+  },
+  "artifacts": {
+    "selected_features_file": "selected_features.json",
+    "coefficients_file": "model_coefficients.json"
+  },
+  "status": "final"
+}

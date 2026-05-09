@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+# Python cache
+__pycache__/
+*.pyc
+# IDE files
+.idea/
+.vscode/
+*.iml
+# macOS files
+.DS_Store
+# Build folders
+build/
+dist/
+# PyInstaller
+*.spec
+# Output data
+data/output/
+# Local datasets
+data/input/healthy/
+data/input/ptsd/
+# Test cache
+.pytest_cache/
+# Coverage
+.coverage
+htmlcov/
+# Logs
+*.log

@@ -1,0 +1,185 @@
+{
+  "base_feature_count": 20,
+  "features": [
+    {
+      "name": "x1",
+      "channel": 26460,
+      "index": 23,
+      "correlation": 0.515384,
+      "roi_pair": "Ver9 -> pMTG r",
+      "stat": "pos_neg_auc_ratio",
+      "enabled": true
+    },
+    {
+      "name": "x2",
+      "channel": 6057,
+      "index": 25,
+      "correlation": 0.48624,
+      "roi_pair": "SFG l -> Language.IFG (L)",
+      "stat": "positive_fraction",
+      "enabled": true
+    },
+    {
+      "name": "x3",
+      "channel": 7477,
+      "index": 11,
+      "correlation": 0.485547,
+      "roi_pair": "PreCG l -> Cereb3 r",
+      "stat": "mad",
+      "enabled": true
+    },
+    {
+      "name": "x4",
+      "channel": 6431,
+      "index": 1,
+      "correlation": 0.472905,
+      "roi_pair": "MidFG l -> sLOC l",
+      "stat": "median",
+      "enabled": true
+    },
+    {
+      "name": "x5",
+      "channel": 3919,
+      "index": 8,
+      "correlation": 0.469904,
+      "roi_pair": "FrontoParietal.LPFC (R) -> Visual.Medial",
+      "stat": "q3",
+      "enabled": true
+    },
+    {
+      "name": "x6",
+      "channel": 9884,
+      "index": 17,
+      "correlation": 0.382411,
+      "roi_pair": "pITG r -> OFusG r",
+      "stat": "lag_of_max",
+      "enabled": true
+    },
+    {
+      "name": "x7",
+      "channel": 21623,
+      "index": 1,
+      "correlation": 0.358026,
+      "roi_pair": "Hippocampus l -> FO r",
+      "stat": "median",
+      "enabled": true
+    },
+    {
+      "name": "x8",
+      "channel": 5560,
+      "index": 24,
+      "correlation": 0.352672,
+      "roi_pair": "IC r -> DorsalAttention.FEF (L)",
+      "stat": "zero_crossings",
+      "enabled": true
+    },
+    {
+      "name": "x9",
+      "channel": 9725,
+      "index": 9,
+      "correlation": 0.221604,
+      "roi_pair": "aITG l -> CO r",
+      "stat": "iqr",
+      "enabled": true
+    },
+    {
+      "name": "x10",
+      "channel": 10334,
+      "index": 18,
+      "correlation": 0.22003,
+      "roi_pair": "toITG l -> SPL r",
+      "stat": "lag_of_min",
+      "enabled": true
+    },
+    {
+      "name": "x11",
+      "channel": 19225,
+      "index": 6,
+      "correlation": -0.281685,
+      "roi_pair": "PT r -> Cereb10 r",
+      "stat": "range",
+      "enabled": true
+    },
+    {
+      "name": "x12",
+      "channel": 21013,
+      "index": 9,
+      "correlation": -0.401877,
+      "roi_pair": "Putamen l -> Cereb8 l",
+      "stat": "iqr",
+      "enabled": true
+    },
+    {
+      "name": "x13",
+      "channel": 21880,
+      "index": 27,
+      "correlation": -0.417429,
+      "roi_pair": "Amygdala l -> MidFG r",
+      "stat": "peak_count",
+      "enabled": true
+    },
+    {
+      "name": "x14",
+      "channel": 26065,
+      "index": 11,
+      "correlation": -0.496034,
+      "roi_pair": "Ver6 -> Cereb7 l",
+      "stat": "mad",
+      "enabled": true
+    },
+    {
+      "name": "x15",
+      "channel": 9782,
+      "index": 28,
+      "correlation": -0.509277,
+      "roi_pair": "pITG r -> DefaultMode.LP (R)",
+      "stat": "trough_count",
+      "enabled": true
+    },
+    {
+      "name": "x16",
+      "channel": 16535,
+      "index": 17,
+      "correlation": -0.524762,
+      "roi_pair": "pTFusC r -> AG r",
+      "stat": "lag_of_max",
+      "enabled": true
+    },
+    {
+      "name": "x17",
+      "channel": 25298,
+      "index": 28,
+      "correlation": -0.529832,
+      "roi_pair": "Cereb10 r -> FP l",
+      "stat": "trough_count",
+      "enabled": true
+    },
+    {
+      "name": "x18",
+      "channel": 25233,
+      "index": 8,
+      "correlation": -0.535082,
+      "roi_pair": "Cereb10 l -> Hippocampus r",
+      "stat": "q3",
+      "enabled": true
+    },
+    {
+      "name": "x19",
+      "channel": 26104,
+      "index": 27,
+      "correlation": -0.535582,
+      "roi_pair": "Ver7 -> FrontoParietal.LPFC (R)",
+      "stat": "peak_count",
+      "enabled": true
+    },
+    {
+      "name": "x20",
+      "channel": 25298,
+      "index": 27,
+      "correlation": -0.53583,
+      "roi_pair": "Cereb10 r -> FP l",
+      "stat": "peak_count",
+      "enabled": true
+    }
+  ]
+}
