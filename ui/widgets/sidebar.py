@@ -23,7 +23,7 @@ class Sidebar(QWidget):
         self._setup_ui()
 
     def _setup_ui(self):
-        self.setFixedWidth(230)
+        self.setFixedWidth(260)
         self.setStyleSheet(f"""
             QWidget {{
                 background-color: {SURFACE};
@@ -103,7 +103,7 @@ class Sidebar(QWidget):
         )
 
         self.model_button = self._create_button(
-            "FAQ & Model",
+            "FAQ && Model",
             "model_info",
             qta.icon("fa5s.info-circle", color=TEXT_DARK)
 

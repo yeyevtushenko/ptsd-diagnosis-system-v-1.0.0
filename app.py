@@ -6,7 +6,6 @@ from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QApplication
 
 from ui.main_window import MainWindow
-from ui.styles.theme import BACKGROUND, TEXT_DARK
 
 
 class PTSDApplication:
@@ -18,22 +17,6 @@ class PTSDApplication:
         font = QFont("Arial")
         font.setPointSize(10)
         self.app.setFont(font)
-
-        self.app.setStyleSheet(f"""
-            QWidget {{
-                font-family: Arial;
-                color: {TEXT_DARK};
-                background-color: {BACKGROUND};
-            }}
-
-            QLabel {{
-                background-color: transparent;
-            }}
-
-            QFrame {{
-                background-color: transparent;
-            }}
-        """)
 
         self.main_window = MainWindow()
 
