@@ -27,7 +27,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile --windowed --name "PTSD Diagnosis System" --add-data "config;config" --add-data "models;models" --add-data "data;data" main.py
+          pyinstaller --onefile --windowed --name "PTSD Diagnosis System" --add-data "config;config" --add-data "models;models" main.py
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
